@@ -1,0 +1,8 @@
+{
+  "name": "adminlte-react-base",
+  "version": "1.0.0",
+  "description": "Compoments and implementation (trought install command) of adminlte on react",
+  "main": "index.js",
+  "author": "@ponyesteves",
+  "license": "MIT"
+}
