@@ -17,7 +17,8 @@ class App extends Component {
         <Footer />
         <RightSideBar />
       </div>
-    )
+    );
   }
 }
-export default App
+
+export default App;
