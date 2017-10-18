@@ -19,5 +19,20 @@ copy(`${templatePath}/globals`, 'src/globals')
   .then(() => console.log('globals succesfully installed'))
   .catch(() => console.log('Error: Files already exist'))
 
-fs.renameSync('src/App.js','src/App.old.js')
+copy(`${templatePath}/containers`, 'src/containers')
+  .then(() => console.log('containers succesfully installed'))
+  .catch(() => console.log('Error: Files already exist'))
+
+copy(`${templatePath}/actions`, 'src/actions')
+  .then(() => console.log('actions succesfully installed'))
+  .catch(() => console.log('Error: Files already exist'))
+
+  copy(`${templatePath}/reducers`, 'src/reducers')
+  .then(() => console.log('reducers succesfully installed'))
+  .catch(() => console.log('Error: Files already exist'))
+
+
+
+fs.renameSync('src/App.js', 'src/App.old.js')
 fs.writeFileSync('src/App.js', fs.readFileSync(`${templatePath}/App.js`))
+fs.writeFileSync('src/store.js', fs.readFileSync(`${templatePath}/store.js`))

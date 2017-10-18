@@ -1,11 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router'
+import { connect } from 'react-redux'
 
-export default (props) => (
-  <li className={'treeview '.concat(props.active ? 'active' : '')}>
-    <a href={props.href}>
-      <i className={props.faClassName}></i> <span>{props.title}</span>
+const TreeView = (props) => (
+  <li className={'treeview '.concat(new RegExp(props.href).test(props.actualPath) ? 'active' : '')}>
+    <Link to={props.href}>
+      <i className={props.faClassName}></i> <span style={{ marginLeft: '10px' }}>{props.title}</span>
       {props.children}
-    </a>
+    </Link>
     <ul className="treeview-menu">
       {(props.items || []).map(Item)}
     </ul>
@@ -13,8 +15,15 @@ export default (props) => (
 )
 
 const Item = (props, index) => (
-  <li className={props.active ? 'active' : ''} key={index}>
-    <a href={props.href}>
-      <i className={props.faClassName} /> {props.title}</a>
+  <li className={new RegExp(props.href).test(props.actualPath) ? 'active' : ''} key={index}>
+    <Link to={props.href} >
+      <i className={props.faClassName} /> {props.title}
+    </Link>
   </li>
 )
+
+const mapStateToProps = (state) => ({
+  actualPath: state.routing.locationBeforeTransitions.pathname
+})
+
+export default connect(mapStateToProps, null)(TreeView)

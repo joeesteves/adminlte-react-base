@@ -4,12 +4,14 @@ import MessagesMenu from './header/messages-menu'
 import NotificationsMenu from './header/notifications-menu'
 import TasksMenu from './header/tasks-menu'
 import UserMenu from './header/user-menu'
+// import SearchBar from './header/search-bar'
+
 
 export default () => (
   <header className="main-header">
     <a href="index2.html" className="logo">
-      <Logo mode="mini"> <b>B</b>LT </Logo>
-      <Logo mode="maxi"> <b>Admin</b>LTE </Logo>
+      <Logo mode="mini"> <b>I</b>EB </Logo>
+      <Logo mode="maxi"> <b>Broker</b>Digital</Logo>
     </a>
 
     <nav className="navbar navbar-static-top">
@@ -17,9 +19,11 @@ export default () => (
       <a href="" className="sidebar-toggle" data-toggle="push-menu" role="button">
         <span className="sr-only">Toggle navigation</span>
       </a>
+      {/* <SearchBar /> */}
 
       <div className="navbar-custom-menu">
         <ul className="nav navbar-nav">
+
           <MessagesMenu />
           <NotificationsMenu />
           <TasksMenu />

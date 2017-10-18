@@ -8,17 +8,10 @@ import 'bootstrap-datepicker'
 import 'jquery-slimscroll'
 import 'admin-lte'
 import 'admin-lte/dist/js/demo'
-/*on every route change u have to execute window.fixLayout
-with redux react router would be something like this
-const history = syncHistoryWithStore(browserHistory, store)
-history.listen(() => setTimeout(() => window.fixLayout(), 1))
-*/
 import './fix'
-
 
 // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
 window.$.widget.bridge('uibutton', window.$.ui.button)
-
 
 // Charts Libraries
 // import 'raphael'

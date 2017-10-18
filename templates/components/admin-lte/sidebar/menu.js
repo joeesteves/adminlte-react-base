@@ -1,42 +1,38 @@
 import React from 'react'
 import TreeView from './menu/tree-view'
-export default () => (
+import MenuLink from './menu/link'
+
+export default (props) => (
   <ul className="sidebar-menu" data-widget="tree">
+    <SideBarButton>Complete Profile</SideBarButton>
     {/* Headers are usefull for dividing sidebar on sections */}
-    <li className="header">MAIN NAVIGATION</li>
+    <li className="header">TRADE</li>
     {/* DropDown TreeView with angle > when close and angle down when open. When active the option is hightlighted and dropdown deploy */}
-    <TreeView active={true} title="DashBoard" items={[
-      { title: 'Dashboard v1', href: 'index.html', faClassName: 'fa fa-circle-o', active: true },
-      { title: 'Dashboard v2', href: 'index2.html', faClassName: 'fa fa-circle-o', active: false }
-    ]} faClassName='fa fa-dashboard'>
+
+    <MenuLink href='watch-list' title='WatchList' faClassName='fa fa-eye-slash fa-lg' />
+    <MenuLink href='portfolio' title='Portfolio' faClassName='fa fa-pie-chart fa-lg' />
+    <MenuLink href='feed' title='Feed' faClassName='fa fa-newspaper-o fa-lg' />
+
+    <li className="header">DISCOVER{props.actualPath}</li>
+    {/* SingleOption */}
+    <MenuLink href='trade-markets' title="Trade Markets" faClassName='fa fa-line-chart fa-lg text-red' />
+    <MenuLink href='copy-founds' title="Copy Founds" faClassName='fa fa-star-o fa-lg text-yellow' />
+    <TreeView href='contact-us' title="Contact Us" items={[
+      { title: 'Mail', faClassName: 'fa fa-envelope-o' },
+      { title: 'Twitter', faClassName: 'fa fa-twitter' }
+    ]} faClassName='fa fa-circle-o fa-lg text-aqua'>
       <span className="pull-right-container">
         <i className="fa fa-angle-left pull-right"></i>
       </span>
     </TreeView>
-    {/* DropDown TreeView with badge instead of angle*/}
-    <TreeView active={false} title="Layout Options" items={[
-      { title: 'Top Navigation', href: 'index.html', faClassName: 'fa fa-circle-o', active: false },
-      { title: 'Boxed', href: 'index2.html', faClassName: 'fa fa-circle-o', active: false }
-    ]} faClassName='fa fa-files-o'>
-      <span className="pull-right-container">
-        <span className="label label-primary pull-right">4</span>
-      </span>
-    </TreeView>
-    <TreeView active={false} title="Widgets" faClassName='fa fa-th'>
-      <small className="label pull-right bg-green">new</small>
-    </TreeView>
-    <TreeView active={false} title="Mailbox" faClassName='fa fa-envelope' href='#'>
-      <span className="pull-right-container">
-        <small className="label pull-right bg-yellow">12</small>
-        <small className="label pull-right bg-green">16</small>
-        <small className="label pull-right bg-red">5</small>
-      </span>
-    </TreeView>
-
-    <li className="header">LABELS</li>
-    {/* SingleOption */}
-    <TreeView active={false} title="Important" faClassName='fa fa-circle-o text-red' href='#' />
-    <TreeView active={false} title="Warning" faClassName='fa fa-circle-o text-yellow' href='#' />
-    <TreeView active={false} title="Information" faClassName='fa fa-circle-o text-aqua' href='#' />
+    <hr style={{ borderColor: '#3A3D46' }} />
+    <SideBarButton>Deposit Founds</SideBarButton>
   </ul>
 )
+
+const SideBarButton = (props) => (
+  <button className="btn btn-large btn-info sidebar-form" style={{ width: '90%', margin: '5%' }}>
+    {props.children}
+  </button>
+)
+

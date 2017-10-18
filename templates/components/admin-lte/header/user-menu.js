@@ -3,7 +3,7 @@ export default (props) => (
   <li className="dropdown user user-menu">
     <a href="" className="dropdown-toggle" data-toggle="dropdown">
       <img src={require("admin-lte/dist/img/user2-160x160.jpg")} className="user-image" alt="User" />
-      <span className="hidden-xs">Alexander Pierce</span>
+      <span className="hidden-xs">Pedro Gómez</span>
     </a>
     <ul className="dropdown-menu">
 
@@ -11,7 +11,7 @@ export default (props) => (
         <img src={require("admin-lte/dist/img/user2-160x160.jpg")} className="img-circle" alt="User" />
 
         <p>
-          Alexander Pierce - Web Developer <small>Member since Nov. 2012</small>
+          Pedro Gómez - Web Developer <small>Member since Nov. 2012</small>
         </p>
       </li>
 

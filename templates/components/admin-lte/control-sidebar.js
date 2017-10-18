@@ -5,8 +5,8 @@ import TabsContent from './tabs/tabs-content'
 export default () => (
   <aside className="control-sidebar control-sidebar-dark">
     <TabsNav items={[
-      {href:'#control-sidebar-home-tab', faClassName:'fa fa-home'},
-      {href:'#control-sidebar-settings-tab', faClassName:'fa fa-gears'},
+      {href:"#control-sidebar-home-tab", faClassName:"fa fa-home"},
+      {href:"#control-sidebar-settings-tab", faClassName:"fa fa-gears"},
     ]} />
     <TabsContent />
 
